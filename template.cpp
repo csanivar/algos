@@ -10,3 +10,7 @@ using namespace std;
 
 typedef long long ll;
 using pi = pair<int, int>;
+
+int main() {
+    return 0;
+}
