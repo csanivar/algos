@@ -12,7 +12,21 @@ class test {
         // stringCompression();
         // rotateMatrix();
         // zeroMatrix();
-        stringRotation();
+        // stringRotation();
+        // targetMean();
+        solution3();
+    }
+
+    public static void solution3() {
+        // int A[] = {7, 3, 7, 3, 1, 3, 4, 1};
+        // int A[] = {2, 1, 1, 3, 2, 1, 1, 3};
+        int A[] = {7, 5, 2, 7, 2, 7, 4, 7};
+        System.out.println(Solution3.solve(A));
+    }
+
+    public static void targetMean() {
+        int A[] = {2, 1, 4};
+        System.out.println(TargetMean.solution(A, 3));
     }
 
     public static void zeroMatrix() {

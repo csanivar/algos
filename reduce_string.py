@@ -11,3 +11,4 @@ def solution(S, K):
             cur = c
             cnt = 1
         pairs.append((cur, cnt))
+    
