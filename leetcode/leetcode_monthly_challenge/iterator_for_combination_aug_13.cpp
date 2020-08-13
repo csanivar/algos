@@ -1,11 +1,11 @@
 class CombinationIterator {
 public:
     int curr, counter, maxCounter, len;
-    vector<string> combis;
+    stack<string> combis;
     int N;
     CombinationIterator(string characters, int combinationLength) {
         curr = -1;
-        combis = vector<string>();
+        combis = stack<string>();
         len = characters.length();
         initCounter(combinationLength);
         // cout << counter << " " << maxCounter;
@@ -37,7 +37,7 @@ public:
                 c >>= 1;
                 --idx;
             }
-            combis.insert(combis.begin(), s);
+            combis.push(s);
             getNextCounter();
         }
     }
@@ -51,12 +51,13 @@ public:
     }
     
     string next() {
-        curr++;
-        return combis[curr];
+        string s = combis.top();
+        combis.pop();
+        return s;
     }
     
     bool hasNext() {
-        return curr < N-1;
+        return !combis.empty();
     }
 };
 
