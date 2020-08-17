@@ -14,7 +14,31 @@ class test {
         // zeroMatrix();
         // stringRotation();
         // targetMean();
-        solution3();
+        // solution3();
+        System.out.println(arrayPacking(new int[]{24, 85, 0}));
+        // System.out.println(sumsDivisibleByK(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5));
+    }
+
+    public static long sumsDivisibleByK(int[] a, int k) {
+        long ans = 0;
+        HashMap<Integer, Integer> mp = new HashMap<>();
+        for(int i=0; i<a.length; ++i) {
+            int rem = a[i]%k;
+            int df = (k - rem)%k;
+            ans += mp.getOrDefault(df, 0);
+            int remCount = mp.getOrDefault(rem, 0);
+            mp.put(rem, remCount+1);
+        }
+        return ans;
+    }
+
+    public static int arrayPacking(int[] a) {
+        int ans = 0;
+        for(int i=0; i<a.length; ++i) {
+            a[i] <<= (8*i);
+            ans |= a[i];
+        }
+        return ans;
     }
 
     public static void solution3() {
